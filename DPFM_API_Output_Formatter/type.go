@@ -44,12 +44,25 @@ type Message struct {
 }
 
 type General struct {
+	SupplyChainRelationshipID int    `json:"SupplyChainRelationshipID"`
+	Buyer                     int    `json:"Buyer"`
+	Seller                    int    `json:"Seller"`
+	CreationDate              string `json:"CreationDate"`
+	LastChangeDate            string `json:"LastChangeDate"`
+	IsMarkedForDeletion       *bool  `json:"IsMarkedForDeletion"`
+}
+
+type GeneralDoc struct {
 	SupplyChainRelationshipID int     `json:"SupplyChainRelationshipID"`
 	Buyer                     int     `json:"Buyer"`
 	Seller                    int     `json:"Seller"`
-	CreationDate              string  `json:"CreationDate"`
-	LastChangeDate            string  `json:"LastChangeDate"`
-	IsMarkedForDeletion       *bool   `json:"IsMarkedForDeletion"`
+	DocType                   string  `json:"DocType"`
+	DocVersionID              int     `json:"DocVersionID"`
+	DocID                     string  `json:"DocID"`
+	FileExtension             string  `json:"FileExtension"`
+	FileName                  *string `json:"FileName"`
+	FilePath                  *string `json:"FilePath"`
+	DocIssuerBusinessPartner  *int    `json:"DocIssuerBusinessPartner"`
 }
 
 type Transaction struct {
